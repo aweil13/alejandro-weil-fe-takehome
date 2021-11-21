@@ -10,8 +10,8 @@ const initialState = {
   "locations": [{"zip": ""}]
 }
 
-export const quoteSlice = createSlice({
-  name: "quote",
+export const applicationSlice = createSlice({
+  name: "application",
   initialState,
   reducers: {
     
