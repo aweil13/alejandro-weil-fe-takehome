@@ -21,9 +21,5 @@ const mDTP = dispatch => {
 }
 
 
-const mapDispatchToProps = dispatch => {
-
-}
-
 export default connect(mSTP, mDTP)(FirstPage);
 

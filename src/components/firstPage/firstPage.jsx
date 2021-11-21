@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class FirstPage extends React.Component{
   constructor(props){
@@ -14,7 +14,7 @@ class FirstPage extends React.Component{
   render(){
     return(
       <div className='form-background'>
-        <form action=""></form>
+        <p className="intro">Whats Up Bitch</p>
       </div>
     )
   }
