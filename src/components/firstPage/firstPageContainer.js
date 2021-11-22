@@ -1,24 +1,15 @@
 import { connect } from 'react-redux';
-import React from 'react';
 import FirstPage from './firstPage';
+import { firstPageApplication } from '../../features/applicationSlice';
 
-const mSTP = () => {
-  return {
-    initialState: {
-      "businessName": "",
-      "grossAnnualSales": 0,
-      "contactEmail": "",
-      "numEmployees": 0,
-      "annualPayroll": 0,
-      "locations": [{"zip": ""}],
-      "industryId": "",
-    }
-  }
-}
+const mSTP = ({application}) => ({  
+    application
+})
 
-const mDTP = dispatch => {
 
-}
+const mDTP = dispatch => ({
+    firstPageApp: payload => dispatch(firstPageApplication(payload))
+})
 
 
 export default connect(mSTP, mDTP)(FirstPage);

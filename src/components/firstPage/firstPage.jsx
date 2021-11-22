@@ -1,16 +1,23 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-class FirstPage extends React.Component{
+export default class FirstPage extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.initialState
+    this.state = this.props.application
     this.update = this.update.bind(this);
+    this.updateZip = this.update.bind(this);
+    this.nextPage = this.nextPage.bind(this);
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value})
+    return e => this.setState({[field]: e.target.value})
   }
+
+  nextPage(){
+    this.props.firstPageApp(this.state)
+  }
+
 
   render(){
     console.log(this.state)
@@ -43,14 +50,19 @@ class FirstPage extends React.Component{
           </div>
           <div className='email-input-container'>
             Email
-            <input className='email-input' type="email" />
+            <input className='email-input' type="email" onChange={this.update("contactEmail")}/>
           </div>
-          
+          <div className='zip-container'>
+            Zip Code
+            <input onChange={this.update("locations")} type="text" className="zip-input"/>
+          </div>
         </form>
+        <div>
+          <Link to="/second-page" className='second-page-link'><button onClick={() => this.props.firstPageApp(this.state)}>Continue</button></Link>
+        </div>
       </div>
     )
   }
 
 }
 
-export default FirstPage;

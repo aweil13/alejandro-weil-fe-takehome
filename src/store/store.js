@@ -4,7 +4,7 @@ import applicationReducer from "../features/applicationSlice";
 
 export const store = configureStore({
   reducer: {
-    application: applicationReducer
+    application: applicationReducer,
   }
 })
 

@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
-import FirstPage from './firstPage/firstPage';
+import FirstPage from './firstPage/firstPageContainer';
+import SecondPage from './secondPage/secondPageContainer';
 import {Routes, Route} from 'react-router-dom';
 
 
@@ -8,7 +9,7 @@ const App = () => (
     <div className="App">
         <Routes>
           <Route path="/" element={<FirstPage/>}/>
-          {/* <Route path="/next" element={<SecondPage/>}/> */}
+          <Route path="/second-page" element={<SecondPage/>}/>
         </Routes>
     </div>
 );
