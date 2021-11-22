@@ -32,8 +32,9 @@ export default class SecondPage extends React.Component{
       headers: {
         "authorization": "token 73920c6f-d530-419c-87b3-4f4762e05e9d"
       },
-      body: JSON.stringify(sendObject)
+      body: sendObject
     }).then(res => console.log(res))
+    .catch((error) => {console.log(error)})
   }
 
   handleSubmit(e){
