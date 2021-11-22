@@ -3,7 +3,6 @@ import { secondPageApplication } from '../../features/applicationSlice';
 import SecondPage from './secondPage';
 
 
-
 const mSTP = ({application}) => ({
   application: application
 })
