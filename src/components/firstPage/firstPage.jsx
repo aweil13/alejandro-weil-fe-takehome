@@ -6,7 +6,6 @@ export default class FirstPage extends React.Component{
     super(props);
     this.state = this.props.application
     this.update = this.update.bind(this);
-    this.updateZip = this.update.bind(this);
     this.nextPage = this.nextPage.bind(this);
   }
 

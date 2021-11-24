@@ -15,7 +15,7 @@ export default class SecondPage extends React.Component{
   }
 
   fetchRequest(application){
-    let sendObject = {
+    let sendObject = JSON.stringify({
       "businessName": application.businessName,
       "contactEmail": application.contactEmail,
       "grossAnnualSales": parseInt(application.grossAnnualSales),
@@ -25,15 +25,17 @@ export default class SecondPage extends React.Component{
       "locations": [{
         "zip": application.locations
       }]
-    }
-    debugger
+    })
+
     fetch("https://api-sandbox.coterieinsurance.com/v1/commercial/applications", {
       method: "POST",
       headers: {
-        "authorization": "token 73920c6f-d530-419c-87b3-4f4762e05e9d"
+        "Authorization": "token 73920c6f-d530-419c-87b3-4f4762e05e9d",
+        'Content-Type': 'application/json'
       },
-      body: sendObject
-    }).then(res => console.log(res))
+      body: sendObject,
+    }).then(res => {let responseObject = res.json();
+    console.log(responseObject.availablePolicyTypes)})
     .catch((error) => {console.log(error)})
   }
 

@@ -32,3 +32,13 @@ export const applicationSlice = createSlice({
 export const { firstPageApplication, secondPageApplication } = applicationSlice.actions
 
 export default applicationSlice.reducer;
+
+// let req = {
+//   "businessName": "Plumbing",
+//   "grossAnnualSales": 75000,
+//   "contactEmail": "alejandroweil13@gmail.com",
+//   "numEmployees": 7,
+//   "annualPayroll": 100000,
+//   "locations": [{"zip": "18032"}],
+//   "industryId": "10537",
+// }
