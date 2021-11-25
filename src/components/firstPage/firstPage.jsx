@@ -17,7 +17,6 @@ export default class FirstPage extends React.Component{
     this.props.firstPageApp(this.state)
   }
 
-
   render(){
     console.log(this.state)
     return(
@@ -32,6 +31,7 @@ export default class FirstPage extends React.Component{
           <div className='label-name'>
             What's your Business Name?
             <input
+              value={this.state.businessName}
               className="business-name-input"
               name='business-name' 
               type="text" 
@@ -50,11 +50,11 @@ export default class FirstPage extends React.Component{
           </div>
           <div className='email-input-container'>
             Email
-            <input className='email-input' type="email" onChange={this.update("contactEmail")}/>
+            <input value={this.state.contactEmail} className='email-input' type="email" onChange={this.update("contactEmail")}/>
           </div>
           <div className='zip-container'>
             Zip Code
-            <input onChange={this.update("locations")} type="text" className="zip-input"/>
+            <input  value={this.state.locations} onChange={this.update("locations")} type="text" className="zip-input"/>
           </div>
         </form>
         <div>

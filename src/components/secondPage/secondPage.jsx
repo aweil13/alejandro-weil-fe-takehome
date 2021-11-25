@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 export default class SecondPage extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.application;
-    this.availablePolicies = null;
+    this.state = this.props.application          
     this.handleSubmit = this.handleSubmit.bind(this);
     this.fetchRequest = this.fetchRequest.bind(this); 
+    this.displayPolicies = this.displayPolicies.bind(this);
   }
 
-
+  
   update(field){
-    return e => this.setState({[field]: e.target.value})
+    return e => this.setState( {[field]: e.target.value})
   }
 
   fetchRequest(application){
@@ -28,8 +28,7 @@ export default class SecondPage extends React.Component{
       }]
     })
     this.props.secondPageApp(this.state);
-    
-    debugger;
+
     fetch("https://api-sandbox.coterieinsurance.com/v1/commercial/applications", {
       method: "POST",
       headers: {
@@ -37,8 +36,9 @@ export default class SecondPage extends React.Component{
         'Content-Type': 'application/json'
       },
       body: sendObject,
-    }).then(res =>  res.json()).then(res => {this.availablePolicies = res.availablePolicyTypes;
-    console.log(this.availablePolicies)})
+    }).then(res =>  res.json()).then(res => {
+        this.setState({"policies": res.availablePolicyTypes})
+    })
     .catch((error) => {console.log(error)})
   }
 
@@ -47,6 +47,25 @@ export default class SecondPage extends React.Component{
     const application = this.state;
 
     this.fetchRequest(application);
+  }
+
+  displayPolicies(policies){
+    return(
+      <div className='available-policies-container'>
+        <h1 className='available-policies-text'>Available Policies</h1>
+          <ul className='policies-list'>
+            {policies.map(policy => {
+              if (policy === "GL") {
+                return <li>General Liability</li>
+              } else if (policy === "PL") {
+                return <li>Professional Liability</li>
+              } else {
+                return <li>Business Owners Policy</li>
+              }
+            })}
+          </ul>
+      </div>
+    )
   }
 
   render(){
@@ -74,11 +93,12 @@ export default class SecondPage extends React.Component{
           <option value={200000}>$200K</option>
         </select>
 
-        <input type="number" onChange={this.update("numEmployees")} />
-        <button type='submit'>Submit</button>
+        <input type="number" value={this.state.numEmployees} onChange={this.update("numEmployees")} />
+        {this.state.policies ? this.displayPolicies(this.state.policies) : null}
+        <button type='submit'>Show Policies</button>
+        <Link to="/" className="back-link"><button >Back</button></Link>
         </form>
       </div>
-
     )
   }
 
