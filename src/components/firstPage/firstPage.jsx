@@ -39,8 +39,9 @@ export default class FirstPage extends React.Component{
               onChange={this.update("businessName")}
             />
           </div>
-          <div className="industry-selector"> Industry
-            <select onChange={this.update("industryId")} className='industry-selector'>
+          <div className="industry-selector"> What Industry is your buisness?
+            <select onChange={this.update("industryId")} defaultValue={"industry"} className='industry-selector'>
+              <option value="industry" disabled>Industry</option>
               <option value="10537">Plumber</option>
               <option value="10391">Software developer</option>
               <option value="10415">Lawyer</option>

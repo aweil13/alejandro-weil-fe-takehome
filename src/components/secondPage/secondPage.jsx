@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 export default class SecondPage extends React.Component{
   constructor(props){
     super(props);
     this.state = this.props.application;
+    this.availablePolicies = null;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.fetchRequest = this.fetchRequest.bind(this); 
   }
@@ -18,15 +19,17 @@ export default class SecondPage extends React.Component{
     let sendObject = JSON.stringify({
       "businessName": application.businessName,
       "contactEmail": application.contactEmail,
-      "grossAnnualSales": parseInt(application.grossAnnualSales),
-      "annualPayroll": parseInt(application.annualPayroll),
-      "numEmployees": parseInt(application.numEmployees),
+      "grossAnnualSales": Number(application.grossAnnualSales),
+      "annualPayroll": Number(application.annualPayroll),
+      "numEmployees": Number(application.numEmployees),
       "industryId": application.industryId,
       "locations": [{
         "zip": application.locations
       }]
     })
-
+    this.props.secondPageApp(this.state);
+    
+    debugger;
     fetch("https://api-sandbox.coterieinsurance.com/v1/commercial/applications", {
       method: "POST",
       headers: {
@@ -34,14 +37,15 @@ export default class SecondPage extends React.Component{
         'Content-Type': 'application/json'
       },
       body: sendObject,
-    }).then(res => {let responseObject = res.json();
-    console.log(responseObject.availablePolicyTypes)})
+    }).then(res =>  res.json()).then(res => {this.availablePolicies = res.availablePolicyTypes;
+    console.log(this.availablePolicies)})
     .catch((error) => {console.log(error)})
   }
 
   handleSubmit(e){
     e.preventDefault();
-    const application = this.state
+    const application = this.state;
+
     this.fetchRequest(application);
   }
 
@@ -51,7 +55,8 @@ export default class SecondPage extends React.Component{
       <div>
         <form onSubmit={this.handleSubmit}>
         <div>Annual Sales</div>
-        <select onChange={this.update("grossAnnualSales")}>
+        <select onChange={this.update("grossAnnualSales")} defaultValue={""}>
+          <option value="" disabled>Sales</option>
           <option value={50000}>$50K</option>
           <option value={75000}>$75K</option>
           <option value={100000}>$100K</option>
@@ -60,7 +65,8 @@ export default class SecondPage extends React.Component{
         </select>
 
         <div>Annual Payroll</div>
-        <select onChange={this.update("annualPayroll")}>
+        <select onChange={this.update("annualPayroll")} defaultValue={""}>
+          <option value="" disabled>Payroll</option>
           <option value={50000}>$50K</option>
           <option value={75000}>$75K</option>
           <option value={100000}>$100K</option>
