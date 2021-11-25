@@ -50,7 +50,8 @@ export default class SecondPage extends React.Component{
   }
 
   displayPolicies(policies){
-    return(
+    if (policies.length === 0) {return(<div className="no-policies">No Available Policies!</div>)}
+    else {return ( 
       <div className='available-policies-container'>
         <h1 className='available-policies-text'>Available Policies</h1>
           <ul className='policies-list'>
@@ -65,7 +66,7 @@ export default class SecondPage extends React.Component{
             })}
           </ul>
       </div>
-    )
+    )}
   }
 
   render(){
