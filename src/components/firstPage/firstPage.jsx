@@ -38,7 +38,8 @@ export default class FirstPage extends React.Component{
               onChange={this.update("businessName")}
             />
           </div>
-          <div className="industry-selector"> What Industry is your buisness?
+          <div className="industry-selector"> 
+            <span> What Industry is your business? </span>
             <select onChange={this.update("industryId")} defaultValue={"industry"} className='industry-selector'>
               <option value="industry" disabled>Industry</option>
               <option value="10537">Plumber</option>
@@ -49,15 +50,15 @@ export default class FirstPage extends React.Component{
           </div>
           <div className='email-input-container'>
             Email
-            <input value={this.state.contactEmail} className='email-input' type="email" onChange={this.update("contactEmail")}/>
+            <input placeholder='Email' value={this.state.contactEmail} className='email-input' type="email" onChange={this.update("contactEmail")}/>
           </div>
           <div className='zip-container'>
             Zip Code
-            <input  value={this.state.locations} onChange={this.update("locations")} type="text" className="zip-input"/>
+            <input placeholder='Zip Code' value={this.state.locations} onChange={this.update("locations")} type="text" className="zip-input"/>
           </div>
         </form>
         <div className='next-page-button-container'>
-          <Link to="/second-page" className='second-page-link'><button onClick={() => this.props.firstPageApp(this.state)}>Continue</button></Link>
+          <Link to="/second-page" className='second-page-link'><button className='button-link' onClick={() => this.props.firstPageApp(this.state)}>Continue</button></Link>
         </div>
       </div>
     )
