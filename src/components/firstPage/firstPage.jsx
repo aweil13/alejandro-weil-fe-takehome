@@ -21,10 +21,10 @@ export default class FirstPage extends React.Component{
     return(
       <div className='form-background'>
         <h1 className='introduction-blurb'>
-          Alejandro's Coterie Insurance Take Home Project
+          Coterie Insurance Take Home Project
         </h1>
         <h2 className='information-request'>
-          Please fill in your business details below!
+          Business Name and Industry
         </h2>
         <form className="initial-form">
           <div className='label-name'>
@@ -56,7 +56,7 @@ export default class FirstPage extends React.Component{
             <input  value={this.state.locations} onChange={this.update("locations")} type="text" className="zip-input"/>
           </div>
         </form>
-        <div>
+        <div className='next-page-button-container'>
           <Link to="/second-page" className='second-page-link'><button onClick={() => this.props.firstPageApp(this.state)}>Continue</button></Link>
         </div>
       </div>

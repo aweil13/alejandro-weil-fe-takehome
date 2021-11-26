@@ -10,7 +10,6 @@ export default class SecondPage extends React.Component{
     this.displayPolicies = this.displayPolicies.bind(this);
   }
 
-  
   update(field){
     return e => this.setState( {[field]: e.target.value})
   }
@@ -70,9 +69,11 @@ export default class SecondPage extends React.Component{
   }
 
   render(){
-    console.log(this.state)
     return(
       <div>
+        <h1 className='introduction-blurb'>
+          Coterie Insurance Take Home Project
+        </h1>
         <form onSubmit={this.handleSubmit}>
         <div>Annual Sales</div>
         <select onChange={this.update("grossAnnualSales")} defaultValue={""}>

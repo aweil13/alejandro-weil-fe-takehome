@@ -1,5 +1,17 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Light.otf');
+}
+
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('../fonts/Gilroy-ExtraBold.otf');
+}
+
 .App {
   text-align: center;
+  font-family: 'Gilroy-Bold';
 }
 
 ul{
@@ -10,3 +22,7 @@ ul{
   color: #61dafb;
 }
 
+h1{
+  font-family: 'Gilroy-Bold';
+  color: rgb(65, 35, 255)
+}
