@@ -54,15 +54,15 @@ export default class SecondPage extends React.Component{
     if (policies.length === 0) {return(<div className='available-policies-container'><h1 className="no-policies">No Available Policies!</h1></div>)}
     else {return ( 
       <div className='available-policies-container'>
-        <h1 className='available-policies-text'>Available Policies</h1>
+        <h1 className='available-policies-text'>Available Policies:</h1>
           <ul className='policies-list'>
             {policies.map(policy => {
               if (policy === "GL") {
-                return <li>General Liability</li>
+                return <li className='policy' key={Math.random()}><span className='list-text'>General Liability</span></li>
               } else if (policy === "PL") {
-                return <li>Professional Liability</li>
+                return <li className='policy' key={Math.random()}><span className='list-text'>Professional Liability</span></li>
               } else {
-                return <li>Business Owners Policy</li>
+                return <li className='policy' key={Math.random()}><span className='list-text'>Business Owners Policy</span></li>
               }
             })}
           </ul>
@@ -107,12 +107,12 @@ export default class SecondPage extends React.Component{
             <span>How many Employees in {this.state.businessName}?</span>
             <input type="number" className='number-employees-input' value={this.state.numEmployees} onChange={this.update("numEmployees")} />
           </div>
+          <button type='submit' className='show-policies-button' onClick={() => {this.props.secondPageApp(this.state); }}>Show Policies</button>
+        </form>
         {this.state.policies ? this.displayPolicies(this.state.policies) : null}
         <div className='second-page-button-container'>
-          <button type='submit' className='show-policies-button' onClick={() => this.props.secondPageApp(this.state)}>Show Policies</button>
           <Link to="/" className="back-link"><button className='back-button' onClick={() => this.props.secondPageApp(this.state)}>Back</button></Link>
         </div>
-        </form>
       </div>
     )
   }

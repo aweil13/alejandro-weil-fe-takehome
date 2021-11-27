@@ -48,24 +48,24 @@
 
 
 .show-policies-button{
-    width: 7%;
-    height: 25%;
-    margin-top: 55px;
-    margin-left: -40%;
-    border-radius: 24px;
+    width: 12%;
+    margin: 0 auto;
+    height: 40px;
     font-family: 'Gilroy';
     font-size: 15px;
     color: rgb(13, 13, 70);
     font-weight: 600;
+    border-radius: 24px;
     border: none;
 }
+
+
 
 .back-link{
     width: 7%;
     height: 25%;
     margin-top: 55px;
-    margin-right: 5px;
-    margin-left: 100px;
+    margin-right: 800px;
 }
 
 .back-button{
@@ -93,3 +93,45 @@
   color: azure;
 }
 
+.available-policies-container{
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.policies-list{
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  padding-right: 50px;
+}
+
+.policy{
+  border: 1px solid black;
+  margin: 5px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.list-text{
+  height: 30%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  font-family: 'Gilroy-Bold';
+  font-weight: 900;
+}
+
+.available-policies-text{
+  color: black;
+}
+
+.no-policies{
+  color: black;
+}
