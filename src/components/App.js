@@ -1,4 +1,6 @@
 import './App.css';
+import './second-page.css';
+import './first-page.css';
 import React from 'react';
 import FirstPage from './firstPage/firstPageContainer';
 import SecondPage from './secondPage/secondPageContainer';

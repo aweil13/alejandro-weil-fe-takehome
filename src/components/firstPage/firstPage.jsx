@@ -18,6 +18,7 @@ export default class FirstPage extends React.Component{
   }
 
   render(){
+    console.log(this.props)
     return(
       <div className='form-background'>
         <h1 className='introduction-blurb'>
@@ -27,8 +28,8 @@ export default class FirstPage extends React.Component{
           Business Name and Industry
         </h2>
         <form className="initial-form">
-          <div className='label-name'>
-            What's your Business Name?
+          <div className='input-container'>
+            <span> What's your Business Name? </span>
             <input
               value={this.state.businessName}
               className="business-name-input"
@@ -38,7 +39,7 @@ export default class FirstPage extends React.Component{
               onChange={this.update("businessName")}
             />
           </div>
-          <div className="industry-selector"> 
+          <div className='input-container'> 
             <span> What Industry is your business? </span>
             <select onChange={this.update("industryId")} defaultValue={"industry"} className='industry-selector'>
               <option value="industry" disabled>Industry</option>
@@ -48,12 +49,12 @@ export default class FirstPage extends React.Component{
               <option value="10109">Handyman</option>
             </select>
           </div>
-          <div className='email-input-container'>
-            Email
+          <div className='input-container'>
+          <span> Please provide a contact email </span>
             <input placeholder='Email' value={this.state.contactEmail} className='email-input' type="email" onChange={this.update("contactEmail")}/>
           </div>
-          <div className='zip-container'>
-            Zip Code
+          <div className='input-container'>
+          <span> Business Zip Code </span>
             <input placeholder='Zip Code' value={this.state.locations} onChange={this.update("locations")} type="text" className="zip-input"/>
           </div>
         </form>

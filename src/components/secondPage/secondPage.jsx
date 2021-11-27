@@ -97,8 +97,10 @@ export default class SecondPage extends React.Component{
 
         <input type="number" value={this.state.numEmployees} onChange={this.update("numEmployees")} />
         {this.state.policies ? this.displayPolicies(this.state.policies) : null}
-        <button type='submit'>Show Policies</button>
-        <Link to="/" className="back-link"><button >Back</button></Link>
+        <div className='second-page-button-container'>
+          <button type='submit' className='show-policies-button'>Show Policies</button>
+          <Link to="/" className="back-link"><button className='back-button'>Back</button></Link>
+        </div>
         </form>
       </div>
     )

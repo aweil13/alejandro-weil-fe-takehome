@@ -1,0 +1,128 @@
+.form-background{
+  display: block;
+  left: 30%;
+  width: 60%;
+  height: 700px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+
+h1{
+  font-family: 'Gilroy-Bold';
+  color: rgb(65, 35, 255)
+}
+
+.information-request{
+  color: rgb(65, 35, 255)
+}
+
+input{
+  font-family: 'Gilroy';
+}
+
+input:focus{
+  border: 2px solid rgb(45, 45, 252);
+  outline: none;
+}
+
+select:focus{
+  border: 2px solid rgb(45, 45, 252);
+  outline: none;
+}
+
+option{
+  font-family: 'Gilroy';
+}
+
+select{
+  font-family: 'Gilroy';
+}
+
+.next-page-button-container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background: rgb(13, 13, 70);
+}
+
+.second-page-link{
+  position: absolute;
+  display: block;
+  width: 7%;
+  height: 25%;
+  bottom: 0px;
+  top: 0px;
+  margin: auto;
+  left: 30%;
+  transform: translate(-50%, 0);
+}
+
+.button-link:hover{
+  cursor: pointer;
+}
+
+
+.button-link{
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 24px;
+  font-family: 'Gilroy';
+  font-size: 15px;
+  color: rgb(13, 13, 70);
+  font-weight: 600;
+}
+
+.button-link:hover{
+  transition-duration: 0.2s;
+  background: rgb(39, 39, 204);
+  color: azure;
+}
+
+.initial-form{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.input-container{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  height: 15%;
+  justify-content: space-around;
+}
+
+span{
+  color: rgb(13, 13, 70);
+  text-align: left;
+}
+
+.business-name-input{
+  width: 300px;
+  height: 40%;
+  padding-left: 10px;
+}
+
+.industry-selector{
+  width: 300px;
+  height: 40%;
+  padding-left: 10px;
+}
+
+.email-input{
+  width: 300px;
+  height: 40%;
+  padding-left: 10px;
+}
+
+.zip-input{
+  width: 300px;
+  height: 40%;
+  padding-left: 10px;
+}

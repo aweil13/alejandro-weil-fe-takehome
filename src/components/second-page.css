@@ -1,0 +1,30 @@
+.second-page-button-container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background: rgb(13, 13, 70);
+  display: flex;
+  justify-content: center;
+}
+
+
+.show-policies-button{
+    width: 7%;
+    height: 25%;
+    margin-top: 55px;
+    margin-left: -40%;
+}
+
+.back-link{
+    width: 7%;
+    height: 25%;
+    margin-top: 55px;
+    margin-right: 5px;
+    margin-left: 100px;
+}
+
+.back-button{
+  width: 100%;
+  height: 100%;
+}
