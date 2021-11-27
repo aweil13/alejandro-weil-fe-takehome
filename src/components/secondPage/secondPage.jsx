@@ -14,6 +14,8 @@ export default class SecondPage extends React.Component{
     return e => this.setState( {[field]: e.target.value})
   }
 
+  
+
   fetchRequest(application){
     let sendObject = JSON.stringify({
       "businessName": application.businessName,
@@ -49,7 +51,7 @@ export default class SecondPage extends React.Component{
   }
 
   displayPolicies(policies){
-    if (policies.length === 0) {return(<div className="no-policies">No Available Policies!</div>)}
+    if (policies.length === 0) {return(<div className='available-policies-container'><h1 className="no-policies">No Available Policies!</h1></div>)}
     else {return ( 
       <div className='available-policies-container'>
         <h1 className='available-policies-text'>Available Policies</h1>
@@ -69,41 +71,49 @@ export default class SecondPage extends React.Component{
   }
 
   render(){
+    console.log(this.state)
     return(
-      <div>
+      <div className='form-background'>
         <h1 className='introduction-blurb'>
           Coterie Insurance Take Home Project
         </h1>
-        <form onSubmit={this.handleSubmit}>
-        <div>Annual Sales</div>
-        <select onChange={this.update("grossAnnualSales")} defaultValue={""}>
-          <option value="" disabled>Sales</option>
-          <option value={50000}>$50K</option>
-          <option value={75000}>$75K</option>
-          <option value={100000}>$100K</option>
-          <option value={150000}>$150K</option>
-          <option value={200000}>$200K</option>
-        </select>
-
-        <div>Annual Payroll</div>
-        <select onChange={this.update("annualPayroll")} defaultValue={""}>
-          <option value="" disabled>Payroll</option>
-          <option value={50000}>$50K</option>
-          <option value={75000}>$75K</option>
-          <option value={100000}>$100K</option>
-          <option value={150000}>$150K</option>
-          <option value={200000}>$200K</option>
-        </select>
-
-        <input type="number" value={this.state.numEmployees} onChange={this.update("numEmployees")} />
+        <h2 className='information-request'>
+          Sales, Payroll, and Number of Employees
+        </h2>
+        <form className='last-form' onSubmit={this.handleSubmit}>
+          <div className='last-page-input-container'>
+           <span> What are {this.state.businessName} annual sales?</span>
+            <select className='annual-sales-select' onChange={this.update("grossAnnualSales")} defaultValue={this.state.grossAnnualSales ? this.state.grossAnnualSales : ""}>
+              <option value="" disabled>Sales</option>
+              <option value={50000}>$50K</option>
+              <option value={75000}>$75K</option>
+              <option value={100000}>$100K</option>
+              <option value={150000}>$150K</option>
+              <option value={200000}>$200K</option>
+            </select>
+          </div>
+          <div className='last-page-input-container'>
+            <span> What is {this.state.businessName} annual payroll?</span>
+            <select className='annual-payroll-select' onChange={this.update("annualPayroll")} defaultValue={this.state.annualPayroll ? this.state.annualPayroll : ""} >
+              <option value="" disabled>Payroll</option>
+              <option value={50000}>$50K</option>
+              <option value={75000}>$75K</option>
+              <option value={100000}>$100K</option>
+              <option value={150000}>$150K</option>
+              <option value={200000}>$200K</option>
+            </select>
+          </div>
+          <div className='last-page-input-container'>
+            <span>How many Employees in {this.state.businessName}?</span>
+            <input type="number" className='number-employees-input' value={this.state.numEmployees} onChange={this.update("numEmployees")} />
+          </div>
         {this.state.policies ? this.displayPolicies(this.state.policies) : null}
         <div className='second-page-button-container'>
-          <button type='submit' className='show-policies-button'>Show Policies</button>
-          <Link to="/" className="back-link"><button className='back-button'>Back</button></Link>
+          <button type='submit' className='show-policies-button' onClick={() => this.props.secondPageApp(this.state)}>Show Policies</button>
+          <Link to="/" className="back-link"><button className='back-button' onClick={() => this.props.secondPageApp(this.state)}>Back</button></Link>
         </div>
         </form>
       </div>
     )
   }
-
 }
