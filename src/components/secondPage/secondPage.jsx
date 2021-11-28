@@ -71,7 +71,7 @@ export default class SecondPage extends React.Component{
   }
 
   render(){
-    console.log(this.state)
+    
     return(
       <div className='form-background'>
         <h1 className='introduction-blurb'>

@@ -62,10 +62,15 @@
 
 
 .back-link{
-    width: 7%;
-    height: 25%;
-    margin-top: 55px;
-    margin-right: 800px;
+  position: absolute;
+  display: block;
+  width: 7%;
+  height: 25%;
+  bottom: 0px;
+  top: 0px;
+  margin: auto;
+  left: 30%;
+  transform: translate(-50%, 0);
 }
 
 .back-button{
