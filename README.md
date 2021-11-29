@@ -154,3 +154,4 @@ fetchRequest(application){
 * I wasn't able to figure out how to trigger a re-render of the sidebar component when the url changes, so the visual flair of tracking the application progress only works when refreshing the page.
 * If I had more time, I would have split the application into more components as well as make it more reactive to screen size changes.
 * Displayed errors when the user didn't input the information in the required format.
+* Displayed the available policies in a better manner, maybe in their own component with better styling.
