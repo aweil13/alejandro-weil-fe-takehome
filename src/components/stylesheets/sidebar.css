@@ -1,0 +1,11 @@
+.sidebar-container{
+  background: rgb(219, 219, 219);
+  height: 780px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+

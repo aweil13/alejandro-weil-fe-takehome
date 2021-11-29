@@ -11,9 +11,9 @@ export default class Sidebar extends React.Component{
 
   pageOne(){
     return(
-      <div className='application-location-container'>
+      <div className='sidebar-container'>
         <div className='application-header-container'>
-          <span className='application-header'>Application</span>
+          <span className='application-header'>Application Location</span>
         </div>
         <div className='application-location-container'>
           <div className='first-page-container'>
