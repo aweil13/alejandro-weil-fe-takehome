@@ -4,8 +4,113 @@
   width: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+.application-header-container{
+  margin-bottom: 200px;
+  margin-top: 10%;
+}
+
+.application-header{
+  font-family: 'Gilroy-Bold';
+  font-size: 20px;
+}
+
+.application-location-container{
+  height: 30%;
+  margin-top: -15%;
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.first-page-container{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dot-line-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.first-page-dot{
+    border-radius: 20px;
+    width: 8px;
+    height: 8px;
+    margin-top: 4px;
+    margin-left: 20px;
+    padding: 0px;
+    background-clip: content-box;
+    position: relative;
+    border: 1px solid rgb(65, 35, 255);
+    background-color: rgb(64, 255, 177);
+}
+
+.first-page-line{
+  flex: 1 1 0%;
+  margin: 0px 0px -60px 24px;
+  border-left: 1px dashed rgb(184, 184, 188)
+}
+
+.first-page-text{
+  margin-left: 5%;
+  text-decoration: none;
+  font-family: 'Gilroy';
+  font-weight: 600;
+  color: black;
+}
+
+.second-page-container{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+
+.second-page-dot{
+  border-radius: 20px;
+  width: 8px;
+  height: 8px;
+  margin-top: 4px;
+  margin-left: 20px;
+  padding: 0px;
+  background-clip: content-box;
+  position: relative;
+  border: 1px solid rgb(184, 184, 188);
+  background-color: rgb(255, 255, 255);
+}
+
+.second-page-text{
+  text-decoration: none;
+  font-family: 'Gilroy';
+  color: rgb(184, 184, 188);
+  margin-left: 5%;
 }
 
 
+.second-page-dot-complete{
+  border-radius: 20px;
+  width: 8px;
+  height: 8px;
+  margin-top: 4px;
+  margin-left: 20px;
+  padding: 0px;
+  background-clip: content-box;
+  position: relative;
+  border: 1px solid rgb(65, 35, 255);
+  background-color: rgb(64, 255, 177);
+}
 
+.second-page-line{
+  flex: 1 1 0%;
+  margin: 0px 0px -60px 24px;
+  border-left: 1px solid rgb(65, 35, 255);
+}
+
+.second-page-text-complete{
+  text-decoration: none;
+  font-family: 'Gilroy';
+  color: black;
+  margin-left: 5%;
+}
