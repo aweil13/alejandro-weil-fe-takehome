@@ -24,7 +24,7 @@ export default class FirstPage extends React.Component{
           Coterie Insurance Take Home Project
         </h1>
         <h2 className='information-request'>
-          Business Name and Industry
+          Business Name, Industry, Email, and Zip Code
         </h2>
         <form className="initial-form">
           <div className='input-container'>
