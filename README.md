@@ -142,7 +142,6 @@ fetchRequest(application){
     }).then(res =>  res.json()).then(res => {
         this.setState({"policies": res.availablePolicyTypes})
     })
-    .catch((error) => {console.log(error)})
   }
 ```
 * This function will then trigger a re-render of the component with the policies available based on the information provided by the user.
