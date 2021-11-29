@@ -10,6 +10,13 @@ export default class Sidebar extends React.Component{
     this.pageTwo = this.pageTwo.bind(this);
   }
 
+  componentDidUpdate(prevProps){
+      if (this.props.location !== prevProps.location){
+        this.setState({location: window.location.href})
+      }
+  }
+
+
   pageOne(){
     return(
       <div className='sidebar-container'>
@@ -63,9 +70,15 @@ export default class Sidebar extends React.Component{
 
 
   render(){
-    console.log(window.location.href)
-    return(
-      this.state.location.toString().includes('second') ? this.pageTwo() : this.pageOne()
-    )
+    console.log(this.props)
+    if (this.state.location.includes("second")){
+      return(
+        this.pageTwo()
+      ) 
+    } else {
+      return(
+        this.pageOne()
+      )
+    }
   }
 }

@@ -11,7 +11,7 @@ import {Routes, Route} from 'react-router-dom';
 
 const App = () => (
     <div className="App">
-          <Sidebar/>
+          <Sidebar location={window.location.href}/>
         <Routes>
           <Route path="/" element={<FirstPage/>}/>
           <Route path="/second-page" element={<SecondPage/>}/>

@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-around;
   height: 50%;
-  margin-left: -10%;
+  margin-left: -3%;
 }
 
 
@@ -19,13 +19,13 @@
 }
 
 .annual-sales-select{
-  width: 300px;
+  width: 320px;
   height: 40%;
   padding-left: 10px;
 }
 
 .annual-payroll-select{
-  width: 300px;
+  width: 320px;
   height: 40%;
   padding-left: 10px;
 }
