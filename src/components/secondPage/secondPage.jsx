@@ -17,6 +17,14 @@ export default class SecondPage extends React.Component{
   
 
   fetchRequest(application){
+    if (!application.businessName){alert("Please fill out the name of your business")}
+    else if (!application.contactEmail){alert("Please fill out a valid email")}
+    else if (!application.grossAnnualSales){alert("Please choose an annual sales amount")}
+    else if (!application.annualPayroll){alert("Please choose an annual payroll amount")}
+    else if (!application.numEmployees){alert("Please fill in the number of employees")}
+    else if (!application.industryId){alert("Please choose an industry")}
+    else if (!application.locations){alert("Please fill out a zip code")}
+    else{
     let sendObject = JSON.stringify({
       "businessName": application.businessName,
       "contactEmail": application.contactEmail,
@@ -40,7 +48,7 @@ export default class SecondPage extends React.Component{
     }).then(res =>  res.json()).then(res => {
         this.setState({"policies": res.availablePolicyTypes})
     })
-    .catch((error) => {console.log(error)})
+    .catch((error) => {console.log(error)})}
   }
 
   handleSubmit(e){
@@ -82,7 +90,7 @@ export default class SecondPage extends React.Component{
         </h2>
         <form className='last-form' onSubmit={this.handleSubmit}>
           <div className='last-page-input-container'>
-           <span> What are {this.state.businessName} annual sales?</span>
+           <span> What are {this.state.businessName ? this.state.businessName : "Business"} annual sales?</span>
             <select className='annual-sales-select' onChange={this.update("grossAnnualSales")} defaultValue={this.state.grossAnnualSales ? this.state.grossAnnualSales : ""}>
               <option value="" disabled>Sales</option>
               <option value={50000}>$50K</option>
@@ -93,7 +101,7 @@ export default class SecondPage extends React.Component{
             </select>
           </div>
           <div className='last-page-input-container'>
-            <span> What is {this.state.businessName} annual payroll?</span>
+            <span> What is {this.state.businessName ? this.state.businessName : "Business"} annual payroll?</span>
             <select className='annual-payroll-select' onChange={this.update("annualPayroll")} defaultValue={this.state.annualPayroll ? this.state.annualPayroll : ""} >
               <option value="" disabled>Payroll</option>
               <option value={50000}>$50K</option>
@@ -104,7 +112,7 @@ export default class SecondPage extends React.Component{
             </select>
           </div>
           <div className='last-page-input-container'>
-            <span>How many Employees in {this.state.businessName}?</span>
+            <span>How many Employees in {this.state.businessName ? this.state.businessName : "Business"}?</span>
             <input type="number" className='number-employees-input' value={this.state.numEmployees} onChange={this.update("numEmployees")} />
           </div>
           <button type='submit' className='show-policies-button' onClick={() => {this.props.secondPageApp(this.state); }}>Show Policies</button>
