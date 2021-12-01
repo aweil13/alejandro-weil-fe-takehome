@@ -4,7 +4,7 @@ import SecondPage from './secondPage';
 
 
 const mSTP = ({application}) => ({
-  application: application
+   application
 })
 
 const mDTP = dispatch => ({

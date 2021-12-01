@@ -16,8 +16,16 @@ h1{
   color: rgb(65, 35, 255)
 }
 
+.introduction-blurb{
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
 .information-request{
-  color: rgb(65, 35, 255)
+  color: rgb(65, 35, 255);
+  width: 50%;
+  margin: 0 auto;
 }
 
 input{
